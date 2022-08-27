@@ -1,6 +1,6 @@
 # Stable Diffusion Dockerfile for ROCm
 
-Run Stable Diffusion on an AMD card, using [this method](https://www.youtube.com/watch?v=d_CgaHyA_n4). Test on my RX 6900 XT.
+Run Stable Diffusion on an AMD card, using [this method](https://www.youtube.com/watch?v=d_CgaHyA_n4). Tested on my RX 6900 XT.
 
 1. Obtain `sd-v1-4.ckpt` and put it in `rocm/`
 1. Run `./build-rocm` to build the Docker image
