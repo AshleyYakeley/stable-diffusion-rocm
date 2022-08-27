@@ -3,7 +3,7 @@ RUN echo 2022-08-24 > /container.date
 WORKDIR /dockerx
 RUN pip3 install --upgrade pip
 RUN conda update -y -n base -c defaults conda
-RUN git clone --depth 1 https://github.com/CompVis/stable-diffusion.git .
+RUN git clone --depth 1 -b uncensored https://github.com/AshleyYakeley/stable-diffusion.git .
 RUN conda env create -f environment.yaml
 RUN mkdir -p models/ldm/stable-diffusion-v1/
 COPY sd-v1-4.ckpt models/ldm/stable-diffusion-v1/model.ckpt
