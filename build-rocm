@@ -1,2 +1,2 @@
 #!/bin/bash -e
-docker build -t stable-diffusion rocm
+docker build -t sd-rocm rocm
