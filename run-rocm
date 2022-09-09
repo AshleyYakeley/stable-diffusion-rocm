@@ -10,6 +10,7 @@ docker run \
     --ipc=host \
     --cap-add=SYS_PTRACE \
     --security-opt seccomp=unconfined \
+    -e HSA_OVERRIDE_GFX_VERSION=10.3.0 \
     -v `pwd`/output:/output \
     rocm \
     "$@"
