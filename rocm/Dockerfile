@@ -8,9 +8,10 @@ RUN conda update -y -n base -c defaults conda
 RUN git clone --depth 1 -b uncensored https://github.com/AshleyYakeley/stable-diffusion.git .
 RUN conda env create -f environment.yaml
 RUN mkdir -p models/ldm/stable-diffusion-v1/
-COPY sd-v1-4.ckpt models/ldm/stable-diffusion-v1/model.ckpt
+RUN ln -s /models/model.ckpt models/ldm/stable-diffusion-v1/model.ckpt
 RUN conda run -n ldm pip3 install --upgrade torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/rocm5.1.1
 RUN conda run -n ldm python scripts/txt2img.py --help
 ENTRYPOINT ["conda", "run", "-n", "ldm", "--no-capture-output"]
 CMD /bin/bash
+VOLUME /models
 VOLUME /output
