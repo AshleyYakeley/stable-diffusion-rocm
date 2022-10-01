@@ -1,5 +1,7 @@
 FROM rocm/pytorch:rocm5.2_ubuntu20.04_py3.7_pytorch_1.11.0_navi21
-RUN echo 2022-08-24 > /container.date
+RUN echo 2022-09-30 > /container.date
+ENV DEBIAN_FRONTEND noninteractive
+RUN apt-get update && apt-get -y dist-upgrade
 WORKDIR /dockerx
 RUN pip3 install --upgrade pip
 RUN conda update -y -n base -c defaults conda
