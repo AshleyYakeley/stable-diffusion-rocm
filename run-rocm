@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/usr/bin/env -S bash -e
 mkdir -p output
 test -h models/model.ckpt || ln -s sd-v1-4.ckpt models/model.ckpt
 docker run \

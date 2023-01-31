@@ -1,2 +1,2 @@
-#!/bin/bash -e
+#!/usr/bin/env -S bash -e
 docker build -t rocm rocm
